@@ -11,6 +11,7 @@ pokemonList.push(
 pokemonList.push(
   {
     name: "Nidoqueen",
+    height: 1.3,
     type: ['ground', 'poison']
   }
 );
