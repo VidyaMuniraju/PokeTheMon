@@ -4,15 +4,15 @@ pokemonList.push(
   {
     name: "Bulbasaur",
     height: 0.7,
-    ability: ['chlorophyll', 'overgrow']
+    type: ['grass', 'poison']
   }
 );
 
 pokemonList.push(
   {
-    name: "Rattata",
-    height: 0.3,
-    ability: ['runaway', 'hustle', 'guts']
+    name: "Nidoqueen",
+    height: 1.3,
+    ability: ['ground', 'poison']
   }
 );
 
@@ -20,7 +20,7 @@ pokemonList.push(
   {
     name: "Pikachu",
     height: 0.4,
-    ability: ['static', 'lightningrod']
+    ability: ['electric', 'fairy']
   }
 );
 
@@ -28,7 +28,7 @@ pokemonList.push(
   {
     name: "Butterfree",
     height: 1.1,
-    ability: ['compoundeyes', 'tintedlens']
+    ability: ['bug', 'flying']
   }
 );
 
