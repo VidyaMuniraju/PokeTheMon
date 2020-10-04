@@ -1,0 +1,28 @@
+:root {
+  --font-size: 35px;
+  --text-color:#CF7583;
+  --bg-color: #E4DFDE;
+  --animation-duration: 0.8s;
+  --animation-delay: 0.5s;
+}
+
+body {
+  font-size: var(--font-size);
+  font-family: 'Piazzolla', serif;
+  text-align: center;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.pokemon-list {
+  line-height: 30px;
+}
+
+.animate__tada {
+  animation-duration: var(--animation-duration);
+  animation-delay: var(--animation-delay);
+}
+
+.pokemon-list-items {
+  color: #000000;
+}
