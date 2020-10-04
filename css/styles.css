@@ -22,7 +22,3 @@ body {
   animation-duration: var(--animation-duration);
   animation-delay: var(--animation-delay);
 }
-
-.pokemon-list-items {
-  color: #000000;
-}
