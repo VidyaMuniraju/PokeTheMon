@@ -1,6 +1,15 @@
 let pokemonRepository = (function(){
   let pokemonList = [];
 
+  function addv(pokemon){
+    if(typeof(pokemon) === 'object'){
+      add(pokemon);
+    }
+    else{
+      return;
+    }
+  }
+
   function add(pokemon){
     pokemonList.push(pokemon);
   }
@@ -10,38 +19,37 @@ let pokemonRepository = (function(){
   }
 
   return {
+    addv: addv,
     add: add,
     getAll: getAll
   };
 }
 )();
 
-pokemonRepository.add({
+pokemonRepository.addv({
      name: "Bulbasaur",
      height: 0.7,
      type: ['grass', 'poison']
 });
 
-pokemonRepository.add({
+pokemonRepository.addv({
      name: "Nidoqueen",
      height: 1.3,
      type: ['ground', 'poison']
 });
 
-pokemonRepository.add({
+pokemonRepository.addv({
      name: "Pikachu",
      height: 0.4,
      type: ['electric', 'fairy']
 });
 
-pokemonRepository.add({
+pokemonRepository.addv({
     name: "Butterfree",
     height: 1.1,
     type: ['bug', 'flying']
  });
 
-// console.log(pokemonRepository.getAll());
-// document.write(pokemonRepository.getAll());
 
 //printing each element of the list using for each method
 //using getAll method of the pokemon repository to work on the list of pokemon.
