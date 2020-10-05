@@ -32,16 +32,12 @@ pokemonList.push(
   }
 );
 
-// console.log(pokemonList[1]);
-// document.write(pokemonList[1].height);
-
-//printing each element of the list
-for(let i = 0; i < pokemonList.length; i++) {
+pokemonList.forEach(function(item) {
   //if the height of the pokemon exceeds the consitional value, add a statement to indicate that
-  if(pokemonList[i].height > 1.1){
-    document.write("<p>" + pokemonList[i].name + "(height: " + pokemonList[i].height + ")" + "-Wow! That's big!" + "</p>");
+  if(item.height > 1.1){
+    document.write("<p>" + item.name + "(height: " + item.height + ")" + "-Wow! That's big!" + "</p>");
   }
   else {
-    document.write("<p>" + pokemonList[i].name + "(height: " + pokemonList[i].height + ")" + "</p>");
+    document.write("<p>" + item.name + "(height: " + item.height + ")" + "</p>");
   }
-}
+});
