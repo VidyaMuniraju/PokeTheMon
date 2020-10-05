@@ -1,38 +1,51 @@
-let pokemonList = [];
+let pokemonRepository = (function(){
+  let pokemonList = [];
 
-pokemonList.push(
-  {
-    name: "Bulbasaur",
-    height: 0.7,
-    type: ['grass', 'poison']
+  function add(pokemon){
+    pokemonList.push(pokemon);
   }
-);
 
-pokemonList.push(
-  {
-    name: "Nidoqueen",
-    height: 1.3,
-    type: ['ground', 'poison']
+  function getAll(){
+    return pokemonList;
   }
-);
 
-pokemonList.push(
-  {
-    name: "Pikachu",
-    height: 0.4,
-    type: ['electric', 'fairy']
-  }
-);
+  return {
+    add: add,
+    getAll: getAll
+  };
+}
+)();
 
-pokemonList.push(
-  {
+pokemonRepository.add({
+     name: "Bulbasaur",
+     height: 0.7,
+     type: ['grass', 'poison']
+});
+
+pokemonRepository.add({
+     name: "Nidoqueen",
+     height: 1.3,
+     type: ['ground', 'poison']
+});
+
+pokemonRepository.add({
+     name: "Pikachu",
+     height: 0.4,
+     type: ['electric', 'fairy']
+});
+
+pokemonRepository.add({
     name: "Butterfree",
     height: 1.1,
     type: ['bug', 'flying']
-  }
-);
+ });
 
-pokemonList.forEach(function(item) {
+// console.log(pokemonRepository.getAll());
+// document.write(pokemonRepository.getAll());
+
+//printing each element of the list using for each method
+//using getAll method of the pokemon repository to work on the list of pokemon.
+pokemonRepository.getAll().forEach(function(item){
   //if the height of the pokemon exceeds the consitional value, add a statement to indicate that
   if(item.height > 1.1){
     document.write("<p>" + item.name + "(height: " + item.height + ")" + "-Wow! That's big!" + "</p>");
