@@ -14,9 +14,13 @@
     <main class="pokemon-list-main">
       <!-- adding animate.css class to the paragraph tag -->
       <p class="animate__tada">Here is a list of Pokemons!</p>
+
+      <p class="load-message">The list is loading!</p>
       <!-- displaying the list of pokemon here -->
-      <ul class="pokemon-list">
+      <ul class="pokemon-list" id="list-pokemon">
       </ul>
+      <script src="js/promise-polyfill.js"></script>
+      <script src="js/fetch-polyfill.js"></script>
       <script src="js/scripts.js" class="pokemon-list-items"></script>
     </main>
   </body>
