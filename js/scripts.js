@@ -2,6 +2,7 @@ let pokemonRepository = (function(){
   let pokemonList = [];
 
   function addv(pokemon){
+    //checking for the type of item being added to the list.
     if(typeof(pokemon) === 'object'){
       add(pokemon);
     }
@@ -18,9 +19,43 @@ let pokemonRepository = (function(){
     return pokemonList;
   }
 
+//displaying the list of pokemon as individual li items.
+//making every pokemon a button.
+  function addListItem(pokemon){
+    let pokemonList = document.querySelector('.pokemon-list');
+
+    let listItem = document.createElement('li');
+
+    let button = document.createElement('button');
+
+    button.innerText = pokemon.name;
+
+    button.classList.add('button-class-pokemonName');
+
+    listItem.appendChild(button);
+
+    pokemonList.appendChild(listItem);
+
+    addEvent(button, pokemon);
+  }
+
+  function showDetails(pokemon) {
+    console.log(pokemon);
+  }
+
+// adding a function for event handling.
+  function addEvent(element, pokemon){
+    element.eventListener('click', function(){
+      showDetails(pokemon);
+    });
+
+  }
+
   return {
     addv: addv,
     add: add,
+    addListItem: addListItem,
+    showDetails: showDetails,
     getAll: getAll
   };
 }
@@ -53,12 +88,8 @@ pokemonRepository.addv({
 
 //printing each element of the list using for each method
 //using getAll method of the pokemon repository to work on the list of pokemon.
-pokemonRepository.getAll().forEach(function(item){
-  //if the height of the pokemon exceeds the consitional value, add a statement to indicate that
-  if(item.height > 1.1){
-    document.write("<p>" + item.name + "(height: " + item.height + ")" + "-Wow! That's big!" + "</p>");
-  }
-  else {
-    document.write("<p>" + item.name + "(height: " + item.height + ")" + "</p>");
-  }
+//using the addListItem method to display the data.
+pokemonRepository.getAll().forEach(function(pokemon){
+    pokemonRepository.addListItem(pokemon);
+
 });

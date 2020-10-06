@@ -14,11 +14,63 @@ body {
   color: var(--text-color);
 }
 
-.pokemon-list {
+.pokemon-list-main {
   line-height: 30px;
 }
 
 .animate__tada {
   animation-duration: var(--animation-duration);
   animation-delay: var(--animation-delay);
+}
+
+/* set the styling for the default display of the button */
+.button-class-pokemonName {
+  background-color: #C70039;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition: 0.2s opacity;
+  -o-transition: 0.2s opacity;
+  transition: 0.2s opacity;
+}
+
+button:hover,
+button:focus,
+.button-class-pokemonName:hover,
+.button-class-pokemonName:focus {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* setting the font size of the text to change the size of the button when viewed on a tab/pad */
+@media only screen and (min-width : 768px) and (max-width : 1024px){
+  .button-class-pokemonName {
+    font-size: 30px;
+  }
+  p {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+/* setting the button size when viewed on a phone */
+@media only screen and (max-width: 500px){
+  .button-class-pokemonName {
+    font-size: 20px;
+  }
+  p {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
