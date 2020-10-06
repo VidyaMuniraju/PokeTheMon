@@ -45,7 +45,7 @@ let pokemonRepository = (function(){
 
 // adding a function for event handling.
   function addEvent(element, pokemon){
-    element.eventListener('click', function(){
+    element.addEventListener('click', function(){
       showDetails(pokemon);
     });
 
