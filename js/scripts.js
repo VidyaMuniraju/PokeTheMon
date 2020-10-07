@@ -41,7 +41,8 @@ let pokemonRepository = (function(){
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-      console.log(pokemon);
+      // console.log(pokemon);
+      showModal(pokemon);
     });
   }
 
@@ -64,8 +65,8 @@ let pokemonRepository = (function(){
           name: item.name,
           detailsUrl: item.url
         };
-        hideLoadingMessage();
         add(pokemon);
+        hideLoadingMessage();
       });
     }).catch(function (e) {
       console.error(e);
@@ -89,23 +90,77 @@ let pokemonRepository = (function(){
     });
   }
 
+// function to show a modal which displays the name, height, and the image of the pokemon
+  function showModal(pokemon) {
+    let modalContainer = document.querySelector('#modal-container');
+    modalContainer.innerText = ' ';
+
+    // creating new div element to display data
+    let modal = document.createElement('div');
+    modal.classList.add('modal');
+
+    let closeButtonElement = document.createElement('button');
+    closeButtonElement.classList.add('modal-close');
+    closeButtonElement.innerText = 'close';
+    closeButtonElement.addEventListener('click', hideModal);
+
+    let nameElement = document.createElement('h1');
+    nameElement.innerText = 'Name:' + ' ' + pokemon.name;
+
+    let heightElement = document.createElement('h3');
+    heightElement.innerText = 'Height:' + ' ' + pokemon.height;
+
+    let imageElement = document.createElement('img');
+    imageElement.src = pokemon.imageUrl;
+
+    // appending each element to the new div created
+    modal.appendChild(closeButtonElement);
+    modal.appendChild(nameElement);
+    modal.appendChild(heightElement);
+    modal.appendChild(imageElement);
+    // appending the newly created div to the div container of the HTML.
+    modalContainer.appendChild(modal);
+
+    modalContainer.classList.add('is-visible');
+  }
+
+  // hide the modal when certain events are performed.
+  function hideModal() {
+    let modalContainer = document.querySelector('#modal-container');
+    modalContainer.classList.remove('is-visible');
+  }
+
+  // adding an event listener for hiding the modal when escape key is pressed
+  window.addEventListener('keydown', (e) => {
+    let modalContainer =document.querySelector('#modal-container');
+    if(e.key === 'Escape' && modalContainer.classList.contains('is-visible')){
+      hideModal();
+    }
+  });
+
+  let modalContainer = document.querySelector('#modal-container');
+
+  // adding an event listener for hiding the modal when a user clicks anywhere out of the modal.
+  modalContainer.addEventListener('click', (e) => {
+    let target = e.target;
+    if(target === modalContainer) {
+      hideModal();
+    }
+  });
+
+
   function showLoadingMessage(){
-    message.classList.add('visibe');
+    message.classList.remove('hidden');
   }
 
   function hideLoadingMessage(){
-    message.classList.remove('visibe');
     message.classList.add('hidden');
   }
 
   return {
-    add: add,
     addListItem: addListItem,
-    showDetails: showDetails,
     loadList: loadList,
-    loadDetails: loadDetails,
-    showLoadingMessage: showLoadingMessage,
-    hideLoadingMessage: hideLoadingMessage,
+    showModal: showModal,
     getAll: getAll
   };
 }
