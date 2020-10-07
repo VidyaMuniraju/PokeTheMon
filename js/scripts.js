@@ -111,6 +111,7 @@ let pokemonRepository = (function(){
     heightElement.innerText = 'Height:' + ' ' + pokemon.height;
 
     let imageElement = document.createElement('img');
+    imageElement.classList.add('img-responsive');
     imageElement.src = pokemon.imageUrl;
 
     // appending each element to the new div created
