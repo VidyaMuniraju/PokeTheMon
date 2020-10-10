@@ -8,11 +8,16 @@
 
 body {
   font-size: var(--font-size);
-  font-family: 'Piazzolla', serif;
+  font-family: 'Quicksand', sans-serif;
   text-align: center;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  /* background-color: var(--bg-color); */
+  /* color: var(--text-color); */
 }
+
+p{
+  margin-top: 30px;
+}
+
 
 .pokemon-list-main {
   line-height: 30px;
@@ -25,14 +30,7 @@ body {
 
 /* set the styling for the default display of the button */
 .button-class-pokemonName {
-  background-color: #C70039;
-  color: black;
-  border: none;
-  border-radius: 5px;
   padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
   font-size: 25px;
   margin: 4px 2px;
   cursor: pointer;
@@ -92,7 +90,7 @@ ul {
   display: none;
 }
 
-#modal-container {
+/* #modal-container {
   position: fixed;
   padding: 20px;
   box-sizing: border-box;
@@ -100,20 +98,20 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5); */
 
   /* to show it above other content */
-  z-index: 999;
+  /* z-index: 999; */
 
   /* to allow scrolling if the screen is not high enough*/
-  overflow: auto;
+  /* overflow: auto; */
 
   /* this is used to center the modal */
-  display: none;
+  /* display: none;
   text-align: center;
-}
+} */
 
-.modal {
+.modal-display {
   margin: auto;
   display: inline-block;
   box-sizing: border-box;
@@ -131,7 +129,7 @@ ul {
   border: 0;
   background: none;
   color: #777;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 #modal-container.is-visible {

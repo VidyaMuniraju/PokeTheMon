@@ -32,6 +32,10 @@ let pokemonRepository = (function(){
 
     button.classList.add('button-class-pokemonName');
 
+    button.classList.add('btn');
+
+    button.classList.add('btn-outline-dark');
+
     listItem.appendChild(button);
 
     pokemonList.appendChild(listItem);
@@ -97,11 +101,11 @@ let pokemonRepository = (function(){
 
     // creating new div element to display data
     let modal = document.createElement('div');
-    modal.classList.add('modal');
+    modal.classList.add('modal-display');
 
     let closeButtonElement = document.createElement('button');
     closeButtonElement.classList.add('modal-close');
-    closeButtonElement.innerText = 'close';
+    closeButtonElement.innerText = 'X';
     closeButtonElement.addEventListener('click', hideModal);
 
     let nameElement = document.createElement('h1');
