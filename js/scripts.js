@@ -33,7 +33,7 @@ let pokemonRepository = (function(){
     button.setAttribute("data-toggle", "modal");
 
     // setting the target to the modal
-    button.setAttribute("data-target", "#exampleModal");
+    button.setAttribute("data-target", "#pokemonModal");
 
     button.innerText = pokemon.name;
 
