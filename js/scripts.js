@@ -28,6 +28,11 @@ let pokemonRepository = (function(){
 
     let button = document.createElement('button');
 
+    button.setAttribute("data-toggle", "modal");
+
+    // setting the target to the modal
+    button.setAttribute("data-target", "#exampleModal");
+
     button.innerText = pokemon.name;
 
     button.classList.add('button-class-pokemonName');
@@ -45,7 +50,6 @@ let pokemonRepository = (function(){
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-      // console.log(pokemon);
       showModal(pokemon);
     });
   }
@@ -96,17 +100,11 @@ let pokemonRepository = (function(){
 
 // function to show a modal which displays the name, height, and the image of the pokemon
   function showModal(pokemon) {
-    let modalContainer = document.querySelector('#modal-container');
-    modalContainer.innerText = ' ';
+    let modalBody = document.querySelector('#modal-data');
+    modalBody.innerText = ' ';
 
-    // creating new div element to display data
-    let modal = document.createElement('div');
-    modal.classList.add('modal-display');
-
-    let closeButtonElement = document.createElement('button');
-    closeButtonElement.classList.add('modal-close');
-    closeButtonElement.innerText = 'X';
-    closeButtonElement.addEventListener('click', hideModal);
+    let modalTitle = document.querySelector('.modal-title');
+    modalTitle.innerText = ' ';
 
     let nameElement = document.createElement('h1');
     nameElement.innerText = 'Name:' + ' ' + pokemon.name;
@@ -119,40 +117,10 @@ let pokemonRepository = (function(){
     imageElement.src = pokemon.imageUrl;
 
     // appending each element to the new div created
-    modal.appendChild(closeButtonElement);
-    modal.appendChild(nameElement);
-    modal.appendChild(heightElement);
-    modal.appendChild(imageElement);
-    // appending the newly created div to the div container of the HTML.
-    modalContainer.appendChild(modal);
-
-    modalContainer.classList.add('is-visible');
+    modalTitle.appendChild(nameElement);
+    modalBody.appendChild(heightElement);
+    modalBody.appendChild(imageElement);
   }
-
-  // hide the modal when certain events are performed.
-  function hideModal() {
-    let modalContainer = document.querySelector('#modal-container');
-    modalContainer.classList.remove('is-visible');
-  }
-
-  // adding an event listener for hiding the modal when escape key is pressed
-  window.addEventListener('keydown', (e) => {
-    let modalContainer =document.querySelector('#modal-container');
-    if(e.key === 'Escape' && modalContainer.classList.contains('is-visible')){
-      hideModal();
-    }
-  });
-
-  let modalContainer = document.querySelector('#modal-container');
-
-  // adding an event listener for hiding the modal when a user clicks anywhere out of the modal.
-  modalContainer.addEventListener('click', (e) => {
-    let target = e.target;
-    if(target === modalContainer) {
-      hideModal();
-    }
-  });
-
 
   function showLoadingMessage(){
     message.classList.remove('hidden');

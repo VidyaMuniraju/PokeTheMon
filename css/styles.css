@@ -18,6 +18,9 @@ p{
   margin-top: 30px;
 }
 
+.details-about {
+  margin: 25px;
+}
 
 .pokemon-list-main {
   line-height: 30px;
@@ -49,100 +52,23 @@ button:focus,
 
 ul {
   list-style-type: none;
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
 }
-
-/* setting the font size of the text to change the size of the button when viewed on a tab/pad */
-@media only screen and (min-width : 768px) and (max-width : 1024px){
-  .button-class-pokemonName {
-    font-size: 30px;
-  }
-  p {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-
-  .modal{
-    max-width: 760px;
-    font-size: 20px;
-  }
-
-}
-
-/* setting the button size when viewed on a phone */
-@media only screen and (max-width: 500px){
-  .button-class-pokemonName {
-    font-size: 20px;
-  }
-  p {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-
-  .modal{
-    max-width: 500px;
-    font-size: 15px;
-  }
-
-}
-
 
 .hidden {
   display: none;
 }
 
-/* #modal-container {
-  position: fixed;
-  padding: 20px;
-  box-sizing: border-box;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); */
-
-  /* to show it above other content */
-  /* z-index: 999; */
-
-  /* to allow scrolling if the screen is not high enough*/
-  /* overflow: auto; */
-
-  /* this is used to center the modal */
-  /* display: none;
-  text-align: center;
-} */
-
-.modal-display {
-  margin: auto;
-  display: inline-block;
-  box-sizing: border-box;
-  background: #fff;
-  padding: 15px;
-  width: 100%;
-  max-width: 700px;
-  text-align: left;
-  font-size: 20px;
+h1 {
+  font-size: var(--font-size);
+  color: #871A2B; 
 }
 
-.modal-close {
-  float: right;
-  -webkit-appearance: none;
-  border: 0;
-  background: none;
-  color: #777;
-  text-decoration: none;
-}
-
-#modal-container.is-visible {
-  display: block;
-  position: fixed;
-  padding: 25px;
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  z-index: 999;
-  overflow: auto;
-  background: rgba(0, 0, 0, 0.5);
+.modal-body {
+  font-size: var(--font-size);
+  color: #3A4253;
 }
 
 .img-responsive {
