@@ -26,6 +26,8 @@ let pokemonRepository = (function(){
 
     let listItem = document.createElement('li');
 
+    listItem.classList.add('list-group-item');
+
     let button = document.createElement('button');
 
     button.setAttribute("data-toggle", "modal");
