@@ -1,7 +1,5 @@
 :root {
   --font-size: 35px;
-  --text-color:#CF7583;
-  --bg-color: #E4DFDE;
   --animation-duration: 0.8s;
   --animation-delay: 0.5s;
 }
@@ -14,7 +12,7 @@ body {
   /* color: var(--text-color); */
 }
 
-p{
+p {
   margin-top: 30px;
 }
 
@@ -61,12 +59,12 @@ ul {
 
 h1 {
   font-size: var(--font-size);
-  color: #871A2B; 
+  color: #871a2b;
 }
 
 .modal-body {
   font-size: var(--font-size);
-  color: #3A4253;
+  color: #3a4253;
 }
 
 .img-responsive {
