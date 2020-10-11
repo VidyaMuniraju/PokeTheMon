@@ -52,6 +52,7 @@ button:focus,
 
 ul {
   list-style-type: none;
+  margin: 15px;
 }
 
 .hidden {
