@@ -4,4 +4,4 @@ A basic application written in vanilla JavaScript and jQuery, this app displays 
  
 ## See the app in action here
 
-[](https://vidyamuniraju.github.io/PokeTheMon/)
+[PokeTheMon](https://vidyamuniraju.github.io/PokeTheMon/)
